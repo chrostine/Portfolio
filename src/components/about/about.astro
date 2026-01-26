@@ -1,0 +1,56 @@
+---
+const hej = "> hej, jeg hedder christine";
+const jeger = "> jeg er coded desgner";
+const udd = "> uddannelse";
+---
+
+<div class="mx-auto max-w-7xl lg:px-5">
+  <div class="grid grid-cols-1 md:grid-cols-5">
+    <!-- billede -->
+    <div class="flex col-span-2">
+      <img src="assets/christine.jpg" class="h-[400px] w-[400px]" alt="" />
+    </div>
+
+    <!-- indhold -->
+    <div class="flex flex-col col-span-3">
+      <!-- overskrift -->
+      <h2 class="text-right text-8xl lg:pr-0 pr-5">about</h2>
+
+      <div class="pl-5 text-lg">
+        <h3>{hej}</h3>
+        <h3>{jeger}</h3>
+      </div>
+
+      <!-- biografi -->
+      <div class="flex flex-col gap-5 p-22">
+        <p>
+          Jeg er coded designer, og jeg arbejder med digitale oplevelser, hvor
+          teknologi og kreativitet smelter sammen.
+        </p>
+        <p>
+          Jeg har erfaring med at arbejde både alene og i tværfaglige teams. Jeg
+          bliver især motiveret, når jeg kan være med til at omsætte idéer til
+          noget, man kan interagere med og mærke, og jeg trives bedst i
+          projekter, hvor jeg kan eksperimentere mig frem.
+        </p>
+        <p>
+          For tiden er jeg optaget af interaktion og gamification som måder at
+          skabe engagerende og meningsfulde digitale oplevelser.
+        </p>
+        <p>
+          Jeg er altid åben for nye projekter og samarbejder - især dem, der
+          udfordrer vante måder at bruge teknologi på.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- uddannelse -->
+  <div class="lg:ml-25">
+    <h3 class="pl-5 text-lg">{udd}</h3>
+    <div class="pr-22 pl-22">
+      <p>Professionsbacheloruddannelse, 4. semester</p>
+      <p>Visuel kommunikation, coded design</p>
+      <p>Danmarks Medie- og Jounralisthøjskole</p>
+    </div>
+  </div>
+</div>

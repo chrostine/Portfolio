@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* standard farver bg+txt */
+body {
+    background-color: var(--color-hvid);
+    color: var(--color-darkblue);
+}
+
 html,
 body {
     margin: 0;
@@ -12,55 +18,84 @@ body {
     font-family: "Bevan";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/Bevan-Regular.ttf") format("truetype");
+    src: url("/fonts/Bevan-Regular.ttf");
 }
 
 @font-face {
     font-family: "AchivoBlack";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/AchivoBlack-Regular.ttf") format("opentype");
+    src: url("/fonts/ArchivoBlack-Regular.ttf");
 }
 
 @font-face {
     font-family: "ChivoMono";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/ChivoMono-Regular.ttf") format("opentype");
+    src: url("/fonts/ChivoMono-Regular.ttf");
 }
 
 @font-face {
     font-family: "GolosText";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/GolosText-Regular.ttf") format("opentype");
+    src: url("/fonts/GolosText-Regular.ttf");
 }
 
-@theme {
-    
-    /* farver */
-    --color-*: initial;
-    --color-green: #C3F079;
-    --color-blue: #B1D0FF;
-    --color-darkblue: #0D122C;
-    --color-darkgrey: #141414;
-    --color-hvid: #FAF8F0;
+/* globale variabler */
+:root {
+  --color-green: #C3F079;
+  --color-blue: #B1D0FF;
+  --color-darkblue: #0D122C;
+  --color-darkgrey: #141414;
+  --color-hvid: #FAF8F0;
 
-    /* fonte */
-    --font-titel: "Bevan", serif;
-    --font-overskrift: "AchivoBlack", sans-serif;
-    --font-underoverskrift: "ChivoMono", monospace;
-    --font-brodtekst: "GolosText", sans-serif;
+  --font-titel: "Bevan", serif;
+  --font-overskrift: "AchivoBlack", sans-serif;
+  --font-underoverskrift: "ChivoMono", monospace;
+  --font-brodtekst: "GolosText", sans-serif;
+}
+
+/* tailwind variabler */
+@theme {
+  /* farver */
+  --color-blue: var(--color-blue);
+  --color-darkgrey: var(--color-darkgrey);
+  --color-hvid: var(--color-hvid);
+  --color-darkblue: var(--color-darkblue);
+  --color-green: var(--color-green);
+
+  /* fonte */
+  --font-titel: "Bevan", serif;
+  --font-overskrift: "AchivoBlack", sans-serif;
+  --font-underoverskrift: "ChivoMono", monospace;
+  --font-brodtekst: "GolosText", sans-serif;
 }
 
 /* styling af tekst */
-h1 {
+@layer base {
+    h1 {
+    @apply uppercase;
     font-family: var(--font-titel);
+  }
+
+  h2 {
+    @apply uppercase;
+    font-family: var(--font-overskrift);
+  }
+
+  h3 {
+    @apply lowercase;
+    font-family: var(--font-underoverskrift);
+  }
+
+  h4 {
+    @apply uppercase;
+    font-family: var(--font-titel);
+  }
+
+  p {
+    font-family: var(--font-brodtekst);
+  }
 }
 
-
-/* standard farver bg+txt */
-body {
-    background-color: var(--color-hvid);
-    color: var(--color-darkblue);
-}

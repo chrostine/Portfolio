@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-    devToolbar: {
-        enabled: false,
-    },
-    plugins: [
-        tailwindcss(),
-    ],
-})
+  devToolbar: {
+    enabled: false,
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});

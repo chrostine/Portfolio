@@ -1,0 +1,9 @@
+---
+const { billede, link, projectnavn } = Astro.props;
+---
+
+<a href={link}>
+  <div class=`bg-darkblue rounded-xl h-[400px] w-[300px]`>
+    <h3 class="text-lg text-blue">{projectnavn}</h3>
+  </div>
+</a>

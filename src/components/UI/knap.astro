@@ -1,0 +1,19 @@
+---
+const { tekst } = Astro.props;
+---
+
+<button class="group bg-blue p-3 rounded-full cursor-pointer text-xl">
+  <h3
+    class="relative
+             before:content-['>']
+             after:content-['<']
+             before:opacity-0
+             after:opacity-0
+             before:transition-opacity
+             after:transition-opacity
+             group-hover:before:opacity-100
+             group-hover:after:opacity-100"
+  >
+    {tekst}
+  </h3>
+</button>

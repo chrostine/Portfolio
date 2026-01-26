@@ -1,0 +1,8 @@
+---
+import Case from "./case.astro";
+const cases = import.meta.glob("/src/pages/cases/*.astro");
+
+const antalCases = Object.keys(cases).length;
+---
+
+<p>Antal cases: {antalCases}</p>
