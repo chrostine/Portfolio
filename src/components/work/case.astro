@@ -1,9 +1,23 @@
 ---
-const { billede, href, projectnavn } = Astro.props;
+const { billede, href, titel } = Astro.props;
 ---
 
-<a href={href}>
-  <div class=`bg-darkblue rounded-xl h-[400px] w-[300px]`>
-    <h3 class="text-lg text-blue">{projectnavn}</h3>
+<a href={href} class="group block h-[400px] w-[300px] shrink-0">
+  <div
+    class="h-full rounded-xl bg-center bg-no-repeat bg-cover grid items-center"
+    style={`background-image: url(${billede})`}
+  >
+    <h3
+      class="relative text-center
+        bg-darkgrey text-blue text-xl pr-5 pl-5 pt-2 pb-2
+        before:content-['>']
+        after:content-['<']
+        before:opacity-0 after:opacity-0
+        before:transition-opacity after:transition-opacity
+        group-hover:before:opacity-100
+        group-hover:after:opacity-100"
+    >
+      {titel}
+    </h3>
   </div>
 </a>

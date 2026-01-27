@@ -1,28 +1,37 @@
 ---
 import Case from "./case.astro";
-const pil = ">"
-const cases = import.meta.glob("/src/pages/cases/*.astro", {
+const pil = ">";
+type CaseModule = {
+  billede: string;
+  titel: string;
+};
+const cases = import.meta.glob<CaseModule>("/src/pages/cases/*.astro", {
   eager: true,
 });
 ---
 
 <div class="flex overflow-x-auto">
-    <div class="mx-auto max-w-7xl px-5">
-        <div class="flex items-center gap-5 min-w-max">
-            <div class="sm:w-[420px] w-[350px] shrink-0 flex flex-col justify-center">
-                <h2 class="text-8xl">work</h2>
-                <p>Mit arbejde omfatter både arbejde fra virkeligheden, case studies fra undervisningen samt personlige projekter</p>
-            </div>
-            <h3 class="text-xl shrink-0 sm:mr-10">{pil}</h3>
-            <div class="flex gap-5">
-                {Object.entries(cases).map(([path, CasePage]) => {
-                    const url = path
-                    .replace("/src/pages", "")
-                    .replace(".astro", "");
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex items-center gap-5 min-w-max">
+      <div class="sm:w-[420px] w-[350px] shrink-0 flex flex-col justify-center">
+        <h2 class="text-8xl">work</h2>
+        <p>
+          Mit arbejde omfatter både arbejde fra virkeligheden, case studies fra
+          undervisningen samt personlige projekter
+        </p>
+      </div>
+      <h3 class="text-xl shrink-0 sm:mr-10">{pil}</h3>
+      <div class="flex gap-5">
+        {
+          Object.entries(cases).map(([path, module]) => {
+            const url = path.replace("/src/pages", "").replace(".astro", "");
 
-                    return <Case href={url} />;
-                })}
-            </div>
-        </div>
+            return (
+              <Case href={url} billede={module.billede} titel={module.titel} />
+            );
+          })
+        }
+      </div>
     </div>
+  </div>
 </div>

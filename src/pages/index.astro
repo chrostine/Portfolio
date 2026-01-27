@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/UI/header.astro";
 import Footer from "../components/UI/footer.astro";
 import Knap from "../components/UI/knap.astro";
 import Figur from "../components/about/figur.astro";
@@ -9,14 +8,15 @@ import Work from "../components/work/work.astro";
 ---
 
 <Layout>
-  <Header sti="sti" />
-  <div class="mx-auto max-w-7xl flex justify-center gap-1 lg:gap-5">
-    <Knap tekst="about" />
-    <Knap tekst="work" />
-    <Knap tekst="contact" />
+  <div class="grid gap-25">
+    <div class="mx-auto max-w-7xl flex justify-center gap-1 lg:gap-5">
+      <Knap tekst="about" />
+      <Knap tekst="work" />
+      <Knap tekst="contact" />
+    </div>
+    <About />
+    <Figur />
+    <Work />
+    <Footer />
   </div>
-  <About />
-  <Figur />
-  <Work />
-  <Footer />
 </Layout>
