@@ -4,10 +4,15 @@ const pil = ">";
 type CaseModule = {
   billede: string;
   titel: string;
+  date: string;
 };
 const cases = import.meta.glob<CaseModule>("/src/pages/cases/*.astro", {
   eager: true,
 });
+
+const sortedCases = Object.entries(cases).sort(
+  (a, b) => new Date(b[1].date).getTime() - new Date(a[1].date).getTime(),
+);
 ---
 
 <div class="flex overflow-x-auto">
@@ -23,9 +28,8 @@ const cases = import.meta.glob<CaseModule>("/src/pages/cases/*.astro", {
       <h3 class="text-xl shrink-0 sm:mr-10">{pil}</h3>
       <div class="flex gap-5">
         {
-          Object.entries(cases).map(([path, module]) => {
+          sortedCases.map(([path, module]) => {
             const url = path.replace("/src/pages", "").replace(".astro", "");
-
             return (
               <Case href={url} billede={module.billede} titel={module.titel} />
             );

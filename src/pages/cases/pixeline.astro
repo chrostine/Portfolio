@@ -1,0 +1,23 @@
+---
+export const billede = "/cases/pixeline/pixeline.png";
+export const titel = "maskotgenerator: pixeline";
+export const date = "2025-11-05";
+
+const gifloop = "/cases/pixeline/pixeline.gif";
+const undertitel = "hej hej";
+
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/UI/header.astro";
+import Footer from "../../components/UI/footer.astro";
+import Showcase from "../../components/work/showcase.astro";
+import Overskrift from "../../components/work/overskrift.astro";
+---
+
+<Layout>
+  <Header titel={titel} />
+  <div class="grid gap-25">
+    <Showcase src={gifloop} alt={titel} />
+    <Overskrift titel={titel} undertitel={undertitel} />
+    <Footer />
+  </div>
+</Layout>
