@@ -5,19 +5,33 @@ export const date = "2025-11-05";
 
 const gifloop = "/cases/pixeline/pixeline.gif";
 const undertitel = "hej hej";
+const opgave = `[Brand] skal bruge en ny kampagnewebsite. Det er vigtigt for [Brand], at [Maskot] indgår i alt marketingsmaterialet. Deadline er snart, så deres marketingafdeling, kan ikke nå at bygge websitet, eller at få [Maskot] med.`;
 
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/UI/header.astro";
 import Footer from "../../components/UI/footer.astro";
 import Showcase from "../../components/work/showcase.astro";
 import Overskrift from "../../components/work/overskrift.astro";
+import Brodtekst from "../../components/about/brodtekst.astro";
 ---
 
 <Layout>
   <Header titel={titel} />
   <div class="grid gap-25">
     <Showcase src={gifloop} alt={titel} />
-    <Overskrift titel={titel} undertitel={undertitel} />
-    <Footer />
+    <div>
+      <Overskrift titel={titel} undertitel={undertitel} />
+      <div class="mx-auto max-w-7xl xl:px-5">
+        <Brodtekst>
+          <p>sdjkfhdsn</p>
+        </Brodtekst>
+        <img
+          src={billede}
+          alt="Christine"
+          class="w-full h-full max-h-[600px] object-cover xl:rounded-xl rounded-e-xl"
+        />
+      </div>
+    </div>
   </div>
+  <Footer />
 </Layout>
