@@ -1,17 +1,11 @@
 ---
 import Case from "./case.astro";
-const pil = ">";
-type CaseModule = {
-  billede: string;
-  titel: string;
-  date: string;
-};
-const cases = import.meta.glob<CaseModule>("/src/pages/cases/*.astro", {
-  eager: true,
-});
+import { casearray } from "../../scripts/casearray";
 
-const sortedCases = Object.entries(cases).sort(
-  (a, b) => new Date(b[1].date).getTime() - new Date(a[1].date).getTime(),
+const pil = ">";
+
+const sortedCases = [...casearray].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
 ---
 
@@ -25,16 +19,17 @@ const sortedCases = Object.entries(cases).sort(
           undervisningen samt personlige projekter
         </p>
       </div>
+
       <h3 class="text-xl shrink-0 sm:mr-10">{pil}</h3>
+
       <div class="flex gap-5">
-        {
-          sortedCases.map(([path, module]) => {
-            const url = path.replace("/src/pages", "").replace(".astro", "");
-            return (
-              <Case href={url} billede={module.billede} titel={module.titel} />
-            );
-          })
-        }
+        {sortedCases.map((c) => (
+          <Case
+            href={`/cases/${c.slug}`}
+            billede={c.billede}
+            titel={c.titel}
+          />
+        ))}
       </div>
     </div>
   </div>

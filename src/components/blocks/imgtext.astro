@@ -1,0 +1,24 @@
+---
+const { src, alt } = Astro.props;
+import Brodtekst from "./brodtekst.astro";
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-7xl">
+  <!-- billed-ramme -->
+  <div class="pr-5 lg:pr-0">
+    <div class="h-[400px] lg:h-[600px] w-full overflow-hidden xl:rounded-xl rounded-e-xl">
+      <img
+        src={src}
+        alt={alt}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  <!-- tekst -->
+  <div>
+    <Brodtekst>
+      <slot />
+    </Brodtekst>
+  </div>
+</div>

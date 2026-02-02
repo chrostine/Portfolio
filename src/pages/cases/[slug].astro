@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/UI/header.astro";
+import Footer from "../../components/UI/footer.astro";
+import Showcase from "../../components/work/showcase.astro";
+import Overskrift from "../../components/blocks/overskrift.astro";
+import Imgtext from "../../components/blocks/imgtext.astro";
+import Display from "../../components/blocks/display.astro";
+
+import { casearray } from "../../scripts/casearray";
+
+export async function getStaticPaths() {
+  return casearray.map((c) => ({
+    params: { slug: c.slug },
+    props: { caseData: c },
+  }));
+}
+
+const { caseData } = Astro.props;
+const { titel, undertitel, billede, gif, text } = caseData;
+---
+
+<Layout>
+  <Header titel={titel} />
+  <div class="grid md:gap-25 gap-18">
+    <Showcase src={gif} alt={titel} />
+    <Overskrift titel={titel} undertitel={`> ${undertitel}`} />
+
+    <Imgtext src={billede} alt={titel}>
+      {text.map((paragraph) => <p>{paragraph}</p>)}
+    </Imgtext>
+    <Display />
+    <Footer />
+  </div>
+  
+</Layout>

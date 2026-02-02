@@ -1,0 +1,11 @@
+---
+const { billede } = Astro.props;
+---
+
+<div class="group block h-[400px] w-[300px] shrink-0">
+  <div
+    class="h-full rounded-xl bg-center bg-no-repeat bg-cover"
+    style={`background-image: url(${billede})`}
+  >
+  </div>
+</div>
