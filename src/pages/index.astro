@@ -5,6 +5,11 @@ import Knap from "../components/UI/knap.astro";
 import Figur from "../components/about/figur.astro";
 import About from "../components/about/about.astro";
 import Work from "../components/work/work.astro";
+import Img from "../components/blocks/img.astro";
+import Overskrift from "../components/blocks/overskrift.astro";
+import Underoverskrift from "../components/blocks/underoverskrift.astro";
+import Brodtekst from "../components/blocks/brodtekst.astro";
+import BrodtekstNoGap from "../components/blocks/brodtekst_nogap.astro";
 ---
 
 <Layout>
@@ -14,8 +19,40 @@ import Work from "../components/work/work.astro";
       <Knap tekst="work" />
       <Knap tekst="contact" />
     </div>
-    <About />
+    <Img src="/assets/christine.png"/>
+    <div class="grid gap-10">
+      <div>
+        <Overskrift titel="about"/>
+        <Underoverskrift>
+          <h3 class="text-lg">{`> `}Hej, jeg hedder Christine</h3>
+          <h3 class="text-lg">{`> `}Jeg er Coded Designer</h3>
+        </Underoverskrift>
+      </div>
+      <Brodtekst>
+        <p>Jeg er coded designer, og jeg arbejder med digitale oplevelser, hvor teknologi og kreativitet smelter sammen.</p>
+        <p>Jeg har erfaring med at arbejde både alene og i tværfaglige teams. Jeg bliver især motiveret, når jeg kan være med til at omsætte idéer til noget, man kan interagere med og mærke, og jeg trives bedst i projekter, hvor jeg kan eksperimentere mig frem.</p>
+        <p>For tiden er jeg optaget af interaktion og gamification som måder at skabe engagerende og meningsfulde digitale oplevelser.</p>
+        <p>Jeg er altid åben for nye projekter og samarbejder - især dem, der udfordrer vante måder at bruge teknologi på</p>
+      </Brodtekst>
+      <div class="grid gap-2">
+        <Underoverskrift>
+          <h3 class="text-lg">{`> `}Udannelse</h3>
+        </Underoverskrift>
+        <BrodtekstNoGap>
+          <p>Professionsbacheloruddannelse, 4. semester</p>
+          <p>Visuel kommunikation, coded design</p>
+          <p>Danmarks Medie- og Jounralisthøjskole</p>
+        </BrodtekstNoGap>
+      </div>
+    </div>
     <Figur />
+    <div>
+      <Overskrift titel="work"/>
+      <Underoverskrift>
+        <h3 class="text-lg">{`> `}Arbejde, case studies og personlige projekter</h3>
+      </Underoverskrift>
+    </div>
+  
     <Work />
     <Footer />
   </div>
