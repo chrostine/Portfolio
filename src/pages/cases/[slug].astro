@@ -2,11 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/UI/header.astro";
 import Footer from "../../components/UI/footer.astro";
-import Showcase from "../../components/work/showcase.astro";
-import OverskriftCase from "../../components/blocks/overskrift_case.astro";
+import CaseGif from "../../components/work/casegif.astro";
+import Overskrift2 from "../../components/blocks/overskrift2.astro";
 import Underoverskrift from "../../components/blocks/underoverskrift.astro";
-import Imgtext from "../../components/blocks/imgtext.astro";
-import Display from "../../components/blocks/display.astro";
+import Display from "../../components/work/display.astro";
 import Brodtekst from "../../components/blocks/brodtekst.astro";
 
 
@@ -20,23 +19,29 @@ export async function getStaticPaths() {
 }
 
 const { caseData } = Astro.props;
-const { titel, undertitel, billede, gif, text } = caseData;
+const { titel, undertitel, billede, gif, text, imgdisplay } = caseData;
 ---
 
 <Layout>
   <Header titel={titel} />
   <div class="grid md:gap-25 gap-18">
-    <Showcase src={gif} alt={titel} />
+    <CaseGif src={gif} alt={titel} />
     <div class="grid gap-10">
       <div>
-        <OverskriftCase titel={titel}/> 
+        <Overskrift2 titel={titel}/> 
         <Underoverskrift>
           <h3 class="text-lg">{`> ${undertitel}`}</h3>
         </Underoverskrift>
       </div>
       <Brodtekst>{text.map((paragraph) => <p>{paragraph}</p>)}</Brodtekst>
     </div>
-    <Display />
+    <div>
+      <Overskrift2 titel="Fotos fra projekt"/> 
+      <Underoverskrift>
+        <h3 class="text-lg">{`> Udvalgte billeder af casen`}</h3>
+      </Underoverskrift>
+    </div>  
+    <Display images={imgdisplay} />
     <Footer />
   </div>
   

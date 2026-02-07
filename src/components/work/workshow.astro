@@ -1,0 +1,28 @@
+---
+import Case from "./case.astro";
+import { casearray } from "../../scripts/casearray";
+
+const pil = ">";
+
+const sortedCases = [...casearray].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+---
+
+<div class="overflow-x-auto sm:overflow-visible">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex items-center min-w-max sm:min-w-0 sm:justify-center">
+      <h3 class="text-5xl shrink-0 mx-25 sm:hidden">{pil}</h3>
+      
+      <div class="flex gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        {sortedCases.map((c) => (
+          <Case
+            href={`/cases/${c.slug}`}
+            billede={c.billede}
+            titel={c.titel}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
