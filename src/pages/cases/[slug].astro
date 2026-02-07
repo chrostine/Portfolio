@@ -30,18 +30,20 @@ const { titel, undertitel, billede, gif, text, imgdisplay } = caseData;
       <div>
         <Overskrift2 titel={titel}/> 
         <Underoverskrift>
-          <h3 class="text-lg">{`> ${undertitel}`}</h3>
+          {undertitel.map((paragraph) => <h3 class="text-lg">{`> ${paragraph}`}</h3>)}
         </Underoverskrift>
       </div>
       <Brodtekst>{text.map((paragraph) => <p>{paragraph}</p>)}</Brodtekst>
     </div>
-    <div>
-      <Overskrift2 titel="Fotos fra projekt"/> 
-      <Underoverskrift>
-        <h3 class="text-lg">{`> Udvalgte billeder af casen`}</h3>
-      </Underoverskrift>
-    </div>  
-    <Display images={imgdisplay} />
+    <div class="grid gap-10">
+      <div>
+        <Overskrift2 titel="Fotos fra projekt"/> 
+        <Underoverskrift>
+          <h3 class="text-lg">{`> Udvalgte billeder af casen`}</h3>
+        </Underoverskrift>
+      </div>  
+      <Display images={imgdisplay} />
+    </div>
     <Footer />
   </div>
   

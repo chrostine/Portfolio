@@ -22,11 +22,12 @@ body {
     src: url("/fonts/Bevan-Regular.ttf");
 }
 
+
 @font-face {
-    font-family: "PressStart";
+    font-family: "VT323";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/PressStart2P-Regular.ttf");
+    src: url("/fonts/VT323-Regular.ttf");
 }
 
 @font-face {
@@ -52,7 +53,7 @@ body {
   --color-hvid: #FAF8F0;
 
   --font-titel: "Bevan", serif;
-  --font-overskrift: "PressStart", sans-serif;
+  --font-overskrift: "VT323", sans-serif;
   --font-underoverskrift: "ChivoMono", monospace;
   --font-brodtekst: "GolosText", sans-serif;
 }

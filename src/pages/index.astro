@@ -45,13 +45,15 @@ import BrodtekstNoGap from "../components/blocks/brodtekst_nogap.astro";
       </div>
     </div>
     <Figur />
-    <div id="work">
-      <Overskrift1 titel="work"/>
-      <Underoverskrift>
-        <h3 class="text-lg">{`> `}Arbejde, case studies og personlige projekter</h3>
-      </Underoverskrift>
+    <div id="work"  class="grid gap-10">
+      <div>
+        <Overskrift1 titel="work"/>
+        <Underoverskrift>
+          <h3 class="text-lg">{`> `}Arbejde, case studies og personlige projekter</h3>
+        </Underoverskrift>
+      </div>
+      <ShowWork></ShowWork>
     </div>
-    <ShowWork></ShowWork>
     <div id="contact">
       <Footer />
     </div>

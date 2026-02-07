@@ -1,9 +1,7 @@
-
-
 export type Case = {
   slug: string;
   titel: string;
-  undertitel: string;
+  undertitel: string[];
   date: string;
   billede: string;
   gif: string;
@@ -15,7 +13,10 @@ export const casearray: Case[] = [
   {
     slug: "pixeline",
     titel: "maskotgenerator: Pixeline",
-    undertitel: "maskotgenerator: Pixeline",
+    undertitel: [
+      "maskotgenerator: Pixeline",
+      "alt hvad jeg har lavet er skolearbejde",
+    ],
     date: "2025-11-05",
     billede: "/cases/pixeline/pixeline.png",
     gif: "/cases/pixeline/pixeline.gif",
@@ -32,7 +33,10 @@ export const casearray: Case[] = [
     {
     slug: "handicaploftet",
     titel: "Datavisualisering af Handicapløftet",
-    undertitel: "lorem ipsum",
+    undertitel: [
+      "Lorem ipsum dolor sit amet",
+      "Quisque faucibus ex sapien",
+    ],
     date: "2025-12-05",
     billede: "/cases/handicaploftet/danmarkskort.png",
     gif: "/cases/pixeline/pixeline.gif",
