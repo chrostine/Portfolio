@@ -48,4 +48,28 @@ export const casearray: Case[] = [
         "/cases/handicaploftet/danmarkskort.png",
     ],
   },
+      {
+    slug: "munich",
+    titel: "City Branding: Munich",
+    undertitel: [
+      "Lorem ipsum dolor sit amet",
+      "Quisque faucibus ex sapien",
+    ],
+    date: "2026-01-23",
+    billede: "/cases/munich/pattern.png",
+    gif: "/cases/munich/munich.gif",
+    text: [
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+    ],
+    imgdisplay: [
+        "/cases/munich/munich01.png",
+        "/cases/munich/munich02.png",
+        "/cases/munich/munich03.png",
+        "/cases/munich/munich04.png",
+        "/cases/munich/munich05.png",
+        "/cases/munich/munich06.png",
+        "/cases/munich/munich07.png",
+    ],
+  },
 ];
