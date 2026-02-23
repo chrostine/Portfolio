@@ -9,14 +9,21 @@ import Overskrift1 from "../components/blocks/overskrift1.astro";
 import Underoverskrift from "../components/blocks/underoverskrift.astro";
 import Brodtekst from "../components/blocks/brodtekst.astro";
 import BrodtekstNoGap from "../components/blocks/brodtekst_nogap.astro";
+
+
+import Sketch from "../components/sketch.astro";
 ---
 
 <Layout>
   <div class="grid gap-25">
-    <div class="mx-auto max-w-7xl flex justify-center gap-1 sm:gap-5 pt-25">
-      <Knap tekst="about"/>
-      <Knap tekst="work" />
-      <Knap tekst="contact" />
+    <Sketch/>
+    <div class="mx-auto max-w-7xl grid text-center gap-5">
+      <h3 class="text-lg">Christines portfolio</h3>
+      <div class="flex gap-1 sm:gap-5">
+        <Knap tekst="about"/>
+        <Knap tekst="work" />
+        <Knap tekst="contact" />
+      </div>
     </div>
     <Img src="/assets/christine.png"/>
     <div class="grid gap-10">
@@ -40,7 +47,7 @@ import BrodtekstNoGap from "../components/blocks/brodtekst_nogap.astro";
         <BrodtekstNoGap>
           <p>Professionsbacheloruddannelse, 4. semester</p>
           <p>Visuel kommunikation, coded design</p>
-          <p>Danmarks Medie- og Jounralisthøjskole</p>
+          <p>Danmarks Medie- og Journalisthøjskole</p>
         </BrodtekstNoGap>
       </div>
     </div>

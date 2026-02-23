@@ -1,0 +1,42 @@
+---
+---
+
+<div id="sketch"></div>
+
+<script>
+  import p5 from "p5";
+
+  const root = getComputedStyle(document.documentElement);
+  const darkblue = root.getPropertyValue("--color-darkblue").trim();
+  const green = root.getPropertyValue("--color-green").trim();
+  const hvid = root.getPropertyValue("--color-hvid").trim();
+  const fontTitel = root.getPropertyValue("--font-titel").trim();
+  const fontBrodtekst = root.getPropertyValue("--font-brodtekst").trim();
+  const fontOverskrift = root.getPropertyValue("--font-overskrift").trim();
+  const fontUnderoverskrift = root.getPropertyValue("--font-underoverskrift").trim();
+
+  const sketch = (p: any) => {
+
+    const getWidth = () => document.documentElement.clientWidth;
+
+    p.setup = () => {
+      p.createCanvas(getWidth(), 400);
+      p.textAlign(p.CENTER, p.CENTER);
+    };
+
+    p.draw = () => {
+      p.background(darkblue);
+      p.fill(hvid);
+      p.noStroke();
+      p.textFont(fontUnderoverskrift);
+      p.textSize(15);
+      p.text("megasej visualisation kommer snart!", p.width / 2, p.height / 2);
+    };
+
+    p.windowResized = () => {
+      p.resizeCanvas(getWidth(), 400);
+    };
+  };
+
+  new p5(sketch, document.getElementById("sketch") ?? undefined);
+</script>
