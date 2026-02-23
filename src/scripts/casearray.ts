@@ -115,4 +115,32 @@ export const casearray: Case[] = [
       "/cases/sakura/sakura3.gif",
     ],
   },
+    {
+    slug: "shecanplay",
+    titel: "Rebrand af SheCanPlay",
+    undertitel: [
+      "Koncept: formløshed"
+    ],
+    date: "2025-12-12",
+    billede: "/cases/shecanplay/shecanplay8.png",
+    gif: "/cases/sakura/sakura.gif",
+    text: [
+      `“Du kan forblive formløs. Du kan tage en form. Du kan tage en form nu, du kan tage en form senere. Dit valg, dit behov”`,
+      "SheCanPlay er en dansk nonprofit-organisation, der arbejder for at styrke unge kvinder og kønsminoriteters deltagelse, synlighed og muligheder i musikbranchen. Organisationen tilbyder gratis talentudviklingsforløb, community, brancheindsigt og adgang til kreative faciliteter.",
+      `Organisationen ønsker en visuel identiet, der åbner op for en “endorsed brands”-struktur for de artister, der ønsker at signalere deres tilhørsforhold til SheCanPlay, uden at overdøve den spirende artists egen identitet.`
+    ],
+    imgdisplay: [
+      "/cases/shecanplay/shecanplay1.png",
+      "/cases/shecanplay/shecanplay2.png",
+      "/cases/shecanplay/shecanplay3.png",
+      "/cases/shecanplay/shecanplay4.png",
+      "/cases/shecanplay/shecanplay5.png",
+      "/cases/shecanplay/shecanplay6.png",
+      "/cases/shecanplay/shecanplay7.png",
+      "/cases/shecanplay/shecanplay8.png",
+      "/cases/shecanplay/shecanplay9.png",
+      "/cases/shecanplay/shecanplay10.png",
+      "/cases/shecanplay/shecanplay11.png",
+    ],
+  },
 ];
