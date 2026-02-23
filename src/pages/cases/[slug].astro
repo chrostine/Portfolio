@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { caseData } = Astro.props;
-const { titel, undertitel, billede, gif, text, imgdisplay } = caseData;
+const { titel, undertitel, billede, gif, text, imgdisplay, date } = caseData;
 ---
 
 <Layout>
@@ -30,6 +30,7 @@ const { titel, undertitel, billede, gif, text, imgdisplay } = caseData;
       <div>
         <Overskrift2 titel={titel}/> 
         <Underoverskrift>
+          <h3 class="text-lg">{`> ${date}`}</h3>
           {undertitel.map((paragraph) => <h3 class="text-lg">{`> ${paragraph}`}</h3>)}
         </Underoverskrift>
       </div>
