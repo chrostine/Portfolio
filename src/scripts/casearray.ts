@@ -41,18 +41,24 @@ export const casearray: Case[] = [
     slug: "handicaploftet",
     titel: "Datavisualisering af Handicapløftet",
     undertitel: [
-      "Lorem ipsum dolor sit amet",
-      "Quisque faucibus ex sapien",
     ],
     date: "2025-12-05",
     billede: "/cases/handicaploftet/danmarkskort.png",
-    gif: "/cases/pixeline/pixeline.gif",
+    gif: "/cases/handicaploftet/handi.gif",
     text: [
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+        "Datavisualisering af valgte underskrivere i kommuner og regioner i forbindelse med kommunalvalget 2025.",
+        "Handicapløftet:",
+        `"Som folkevalgt vil jeg kæmpe for:`,
+        "At styrke rettigheder og retssikkerhed i sagsbehandlingen - også for dem der aldrig søger eller klager",
+        "At sikre høj faglighed - i botilbud, på skoler og i alle andre indsatser",
+        "At sikre ledsagelse til alle mennesker med behov - det er forudsætning for trivsel og deltagelse",
+        "At styrke sundhed og trivsel - specifikt at sikre gennemførelse af sundhedstjek for mennesker i kommunens botilbud",
+        "At styrke kvalitet og ambitioner for alle elever med udviklingshandicap i grundskolen - på almenområdet, i specialklasser og på specialskole",
+        `At sikre beskyttelse og tilsyn med vilkår for mennesker i sociale tilbud"`
     ],
     imgdisplay: [
-        "/cases/handicaploftet/danmarkskort.png",
+        "/cases/handicaploftet/handi_01.png",
+        "/cases/handicaploftet/handi_02.png",
     ],
   },
   {
@@ -115,7 +121,7 @@ export const casearray: Case[] = [
       "/cases/sakura/sakura3.gif",
     ],
   },
-    {
+  {
     slug: "shecanplay",
     titel: "Rebrand af SheCanPlay",
     undertitel: [
@@ -123,7 +129,7 @@ export const casearray: Case[] = [
     ],
     date: "2025-12-12",
     billede: "/cases/shecanplay/shecanplay8.png",
-    gif: "/cases/sakura/sakura.gif",
+    gif: "/cases/shecanplay/shecanblob.gif",
     text: [
       `“Du kan forblive formløs. Du kan tage en form. Du kan tage en form nu, du kan tage en form senere. Dit valg, dit behov”`,
       "SheCanPlay er en dansk nonprofit-organisation, der arbejder for at styrke unge kvinder og kønsminoriteters deltagelse, synlighed og muligheder i musikbranchen. Organisationen tilbyder gratis talentudviklingsforløb, community, brancheindsigt og adgang til kreative faciliteter.",
@@ -141,6 +147,39 @@ export const casearray: Case[] = [
       "/cases/shecanplay/shecanplay9.png",
       "/cases/shecanplay/shecanplay10.png",
       "/cases/shecanplay/shecanplay11.png",
+    ],
+  },
+  {
+    slug: "aaben",
+    titel: "Labelgenerator til Åben øl",
+    undertitel: [
+    ],
+    date: "2026-03-06",
+    billede: "/cases/aaben/aaben_00.png",
+    gif: "/cases/aaben/aaben.gif",
+    text: [
+      "Konceptualicering, design og kodet løsning af et visuelt designsystem, som ÅBEN kan bruge til at lave labeldesigns til deres mange forskellige øl.",
+      "Kodet med frameworket p5.js og three.js."
+    ],
+    imgdisplay: [
+    ],
+  },
+  {
+    slug: "plotter",
+    titel: "Plotter art generator",
+    undertitel: [
+    ],
+    date: "2024-12-20",
+    billede: "/cases/prikker/plotte-prikker.png",
+    gif: "/cases/prikker/prikker.gif",
+    text: [
+      "Browserbaseret sketch i p5.js, som kan exportere SVG-filer som kan plottes på en AxiDraw-maskine.",
+      "Interfacet kan styre udvalgte variabler i sketchen via. Shoelace"
+    ],
+    imgdisplay: [
+      "/cases/prikker/plotte-prikker.png",
+      "/cases/prikker/prikker2.png",
+      "/cases/prikker/prikker3.png",
     ],
   },
 ];
