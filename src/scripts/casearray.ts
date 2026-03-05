@@ -155,13 +155,23 @@ export const casearray: Case[] = [
     undertitel: [
     ],
     date: "2026-03-06",
-    billede: "/cases/aaben/aaben_00.png",
+    billede: "/cases/aaben/aaben00.png",
     gif: "/cases/aaben/aaben.gif",
     text: [
       "Konceptualicering, design og kodet løsning af et visuelt designsystem, som ÅBEN kan bruge til at lave labeldesigns til deres mange forskellige øl.",
       "Kodet med frameworket p5.js og three.js."
     ],
     imgdisplay: [
+      "/cases/aaben/aaben07.png",
+      "/cases/aaben/aaben08.png",
+      "/cases/aaben/aaben09.png",
+      "/cases/aaben/aaben06.png",
+      "/cases/aaben/aaben02.png",
+      "/cases/aaben/aaben03.png",
+      "/cases/aaben/aaben04.png",
+      "/cases/aaben/aaben05.png",
+      "/cases/aaben/aaben01.png",
+      
     ],
   },
   {
