@@ -182,4 +182,21 @@ export const casearray: Case[] = [
       "/cases/prikker/prikker3.png",
     ],
   },
+  {
+    slug: "monsterbird",
+    titel: "Monster bird",
+    undertitel: [
+    ],
+    date: "2024-12-16",
+    billede: "/cases/monster/monster1.png",
+    gif: "/cases/monster/monster.gif",
+    text: [
+      "Min egen version af spillet Flappy Bird i et univers af neon, monster og syre.",
+      "Dette projekt er udarbejdet som led i undervisning og er udelukkende til ikke-kommercielt brug. Alle rettigheder tilhører de oprindelige rettighedshavere.",
+    ],
+    imgdisplay: [
+      "/cases/monster/monster1.png",
+      "/cases/monster/monster2.png",
+    ],
+  },
 ];
