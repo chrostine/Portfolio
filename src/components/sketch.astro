@@ -15,6 +15,8 @@
   const fontOverskrift = root.getPropertyValue("--font-overskrift").trim();
   const fontUnderoverskrift = root.getPropertyValue("--font-underoverskrift").trim();
 
+  let tekst = "megasej visualisering kommer snart (:"
+
   const sketch = (p: any) => {
 
     const getWidth = () => document.documentElement.clientWidth;
@@ -30,7 +32,7 @@
       p.noStroke();
       p.textFont(fontUnderoverskrift);
       p.textSize(15);
-      p.text("megasej visualisation kommer snart!", p.width / 2, p.height / 2);
+      p.text(tekst, p.width / 2, p.height / 2);
     };
 
     p.windowResized = () => {
