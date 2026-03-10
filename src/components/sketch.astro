@@ -1,11 +1,14 @@
 ---
-// const { titel } = Astro.props;
+const { tekst } = Astro.props;
 ---
 
-<div id="sketch"></div>
+<div id="sketch" data-tekst={tekst}></div>
 
 <script>
   import p5 from "p5";
+
+  const sketchEl = document.getElementById("sketch");
+  let tekst = (sketchEl?.dataset.tekst ?? "").toLowerCase();
 
   const root = getComputedStyle(document.documentElement);
   const darkblue = root.getPropertyValue("--color-darkblue").trim();
@@ -14,16 +17,18 @@
   const fontTitel = root.getPropertyValue("--font-titel").trim();
   const fontBrodtekst = root.getPropertyValue("--font-brodtekst").trim();
   const fontOverskrift = root.getPropertyValue("--font-overskrift").trim();
-  const fontUnderoverskrift = root.getPropertyValue("--font-underoverskrift").trim();
+  const fontUnderoverskrift = root
+    .getPropertyValue("--font-underoverskrift")
+    .trim();
 
-  let tekst = "megasej visualisering kommer snart (:"
+  // SKETCH START
 
   const sketch = (p: any) => {
-
     const getWidth = () => document.documentElement.clientWidth;
+    const getHeight = () => document.documentElement.clientHeight;
 
     p.setup = () => {
-      p.createCanvas(getWidth(), 400);
+      p.createCanvas(getWidth(), getHeight());
       p.textAlign(p.CENTER, p.CENTER);
     };
 
@@ -37,9 +42,14 @@
     };
 
     p.windowResized = () => {
-      p.resizeCanvas(getWidth(), 400);
+      p.resizeCanvas(getWidth(), getHeight());
     };
   };
 
   new p5(sketch, document.getElementById("sketch") ?? undefined);
+
+  // Lyt på ændringer fra streng.astro
+  document.addEventListener("strengChanged", (e: Event) => {
+    tekst = (e as CustomEvent).detail.toLowerCase();
+  });
 </script>

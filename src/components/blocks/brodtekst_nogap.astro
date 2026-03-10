@@ -1,7 +1,10 @@
 ---
-
+const { aar } = Astro.props;
 ---
 
 <div class="mx-auto max-w-xl flex flex-col px-15 w-full">
-  <slot />
+  <p class="font-bold">{aar}</p>
+  <div class="pl-5">
+    <slot />
+  </div>
 </div>
