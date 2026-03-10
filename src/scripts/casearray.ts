@@ -162,15 +162,15 @@ export const casearray: Case[] = [
       "Kodet med frameworket p5.js og three.js."
     ],
     imgdisplay: [
-      "/cases/aaben/aaben11.jpg",
-      "/cases/aaben/aaben12.jpg",
+      "/cases/aaben/aaben08.png",
       "/cases/aaben/aaben07.png",
       "/cases/aaben/aaben06.png",
       "/cases/aaben/aaben02.png",
       "/cases/aaben/aaben03.png",
-      "/cases/aaben/aaben04.png",
       "/cases/aaben/aaben05.png",
       "/cases/aaben/aaben01.png",
+      "/cases/aaben/aaben09.jpg",
+      "/cases/aaben/aaben04.jpg",
       
     ],
   },
