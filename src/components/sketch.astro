@@ -21,6 +21,11 @@ const { tekst } = Astro.props;
     .getPropertyValue("--font-underoverskrift")
     .trim();
 
+  let phase = 0;
+  let offset = 0;
+  const frequency = 0.04;
+  const amplitude = 70;
+
   // SKETCH START
 
   const sketch = (p: any) => {
@@ -34,11 +39,46 @@ const { tekst } = Astro.props;
 
     p.draw = () => {
       p.background(darkblue);
-      p.fill(hvid);
+
+      p.fill(green);
       p.noStroke();
       p.textFont(fontUnderoverskrift);
-      p.textSize(15);
-      p.text(tekst, p.width / 2, p.height / 2);
+      p.textSize(20);
+
+      const letters = (tekst + " > ").split("");
+      const letterSpacing = 17;
+      const speed = 0.2;
+
+      offset += speed;
+
+      const shift = offset % letterSpacing;
+
+      for (
+        let i = -2;
+        i * letterSpacing - shift < getWidth() + letterSpacing;
+        i++
+      ) {
+        const x = i * letterSpacing - shift;
+        const worldX = x + offset;
+
+        const letterIndex =
+          (((worldX / letterSpacing) % letters.length) + letters.length) %
+          letters.length;
+        const letter = letters[Math.floor(letterIndex)];
+
+        const distFromCenter =
+          0.2 - Math.abs((x - getWidth() / 2) / (getWidth() / 2));
+        const variableAmplitude =
+          amplitude * (0.1 + 0.9 * distFromCenter * distFromCenter);
+
+        const y =
+          getHeight() / 2 +
+          variableAmplitude * p.sin(frequency * worldX + phase);
+
+        p.text(letter, x, y);
+      }
+
+      phase += 0.02;
     };
 
     p.windowResized = () => {
