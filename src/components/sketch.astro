@@ -6,7 +6,6 @@ const { tekst } = Astro.props;
 
 <style>
   #sketch canvas {
-    touch-action: none; /* Fjern denne linje hvis den allerede er der */
     pointer-events: none; /* ← Dette er løsningen */
   }
 </style>
@@ -41,7 +40,8 @@ const { tekst } = Astro.props;
 
     p.setup = () => {
       const canvas = p.createCanvas(getWidth(), getHeight());
-      canvas.elt.style.pointerEvents;
+      canvas.elt.style.pointerEvents = "none";
+      canvas.elt.style.touchAction = "auto";
       p.textAlign(p.CENTER, p.CENTER);
     };
 
