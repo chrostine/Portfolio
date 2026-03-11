@@ -198,7 +198,7 @@ export const casearray: Case[] = [
     undertitel: [
     ],
     date: "2024-12-16",
-    billede: "/cases/monster/monster1.png",
+    billede: "/cases/monster/monster3.png",
     gif: "/cases/monster/monster.gif",
     text: [
       "Min egen version af spillet Flappy Bird i et univers af neon, monster og syre.",
@@ -207,6 +207,7 @@ export const casearray: Case[] = [
     imgdisplay: [
       "/cases/monster/monster1.png",
       "/cases/monster/monster2.png",
+      "/cases/monster/monster3.png",
     ],
   },
 ];
