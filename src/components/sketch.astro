@@ -54,6 +54,14 @@ const { tekst } = Astro.props;
       p.textFont(fontUnderoverskrift);
       p.textSize(20);
 
+      // navigationspil
+      p.push();
+      p.translate(getWidth() / 2, getHeight() * 0.88);
+      p.rotate(p.HALF_PI);
+      p.textSize(80);
+      p.text(">", 0, 0);
+      p.pop();
+
       const letters = (tekst + " > ").split("");
       const letterSpacing = 17;
       const speed = 0.2;
