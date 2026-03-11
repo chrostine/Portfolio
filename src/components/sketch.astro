@@ -33,7 +33,8 @@ const { tekst } = Astro.props;
     const getHeight = () => document.documentElement.clientHeight;
 
     p.setup = () => {
-      p.createCanvas(getWidth(), getHeight());
+      const canvas = p.createCanvas(getWidth(), getHeight());
+      canvas.elt.style.pointerEvents;
       p.textAlign(p.CENTER, p.CENTER);
     };
 
