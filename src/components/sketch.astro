@@ -4,6 +4,13 @@ const { tekst } = Astro.props;
 
 <div id="sketch" data-tekst={tekst}></div>
 
+<style>
+  #sketch canvas {
+    touch-action: none; /* Fjern denne linje hvis den allerede er der */
+    pointer-events: none; /* ← Dette er løsningen */
+  }
+</style>
+
 <script>
   import p5 from "p5";
 
