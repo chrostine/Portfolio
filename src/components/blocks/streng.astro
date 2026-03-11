@@ -30,15 +30,19 @@
 <script>
   const input = document.getElementById("streng-input") as HTMLInputElement;
 
-  // Auto-resize input bredde efter indhold
+  const gemt = sessionStorage.getItem("strengTekst");
+  if (gemt) {
+    input.value = gemt;
+    document.dispatchEvent(new CustomEvent("strengChanged", { detail: gemt }));
+  }
+
   const resize = () => {
     input.size = Math.max(input.value.length, 1);
   };
 
   input.addEventListener("input", () => {
     resize();
-
-    // Udsend event så andre komponenter (fx Sketch) kan lytte
+    sessionStorage.setItem("strengTekst", input.value);
     document.dispatchEvent(
       new CustomEvent("strengChanged", { detail: input.value }),
     );

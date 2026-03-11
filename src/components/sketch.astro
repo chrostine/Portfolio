@@ -14,7 +14,8 @@ const { tekst } = Astro.props;
   import p5 from "p5";
 
   const sketchEl = document.getElementById("sketch");
-  let tekst = (sketchEl?.dataset.tekst ?? "").toLowerCase();
+  const gemt = sessionStorage.getItem("strengTekst");
+  let tekst = (gemt ?? sketchEl?.dataset.tekst ?? "").toLowerCase();
 
   const root = getComputedStyle(document.documentElement);
   const darkblue = root.getPropertyValue("--color-darkblue").trim();
@@ -99,5 +100,6 @@ const { tekst } = Astro.props;
   // Lyt på ændringer fra streng.astro
   document.addEventListener("strengChanged", (e: Event) => {
     tekst = (e as CustomEvent).detail.toLowerCase();
+    sessionStorage.setItem("strengTekst", tekst);
   });
 </script>
