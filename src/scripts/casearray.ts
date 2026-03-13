@@ -44,7 +44,7 @@ export const casearray: Case[] = [
   },
   {
     slug: "handicaploftet",
-    url: "",
+    url: "https://www.lev.dk/handicaploftet/valgte-underskrivere-i-kommuner-og-region/",
     titel: "Data visualization of Handicapløftet",
     date: "2025-12-05",
     programs: [
