@@ -8,7 +8,6 @@ import Underoverskrift from "../../components/blocks/underoverskrift.astro";
 import Display from "../../components/work/display.astro";
 import Brodtekst from "../../components/blocks/brodtekst.astro";
 
-
 import { casearray } from "../../scripts/casearray";
 
 export async function getStaticPaths() {
@@ -28,24 +27,27 @@ const { titel, undertitel, billede, gif, text, imgdisplay, date } = caseData;
     <CaseGif src={gif} alt={titel} />
     <div class="grid gap-10">
       <div>
-        <Overskrift2 titel={titel}/> 
+        <Overskrift2 titel={titel} />
         <Underoverskrift>
           <h3 class="text-lg">{`> ${date}`}</h3>
-          {undertitel.map((paragraph) => <h3 class="text-lg">{`> ${paragraph}`}</h3>)}
+          {
+            undertitel.map((paragraph) => (
+              <h3 class="text-lg">{`> ${paragraph}`}</h3>
+            ))
+          }
         </Underoverskrift>
       </div>
       <Brodtekst>{text.map((paragraph) => <p>{paragraph}</p>)}</Brodtekst>
     </div>
     <div class="grid gap-10">
       <div>
-        <Overskrift2 titel="Fotos fra projekt"/> 
+        <Overskrift2 titel="Fotos from the project" />
         <Underoverskrift>
-          <h3 class="text-lg">{`> Udvalgte billeder af casen`}</h3>
+          <h3 class="text-lg">{`> Selected images of the case`}</h3>
         </Underoverskrift>
-      </div>  
+      </div>
       <Display images={imgdisplay} />
     </div>
     <Footer />
   </div>
-  
 </Layout>
