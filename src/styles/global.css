@@ -101,3 +101,25 @@ body {
   }
 }
 
+/* Wave animation */
+
+.wave-text span {
+    display: inline-block;
+    font-size: inherit;
+    animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+

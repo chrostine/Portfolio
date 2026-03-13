@@ -1,10 +1,10 @@
 ---
-const { billede, href, titel } = Astro.props;
+const { billede, href, titel, programmer } = Astro.props;
 ---
 
 <a href={href} class="group block h-[400px] w-[300px] shrink-0">
   <div
-    class="h-full rounded-xl bg-center bg-no-repeat bg-cover grid items-center"
+    class="h-full rounded-xl bg-center bg-no-repeat bg-cover grid items-end"
     style={`background-image: url(${billede})`}
   >
     <h3
@@ -15,7 +15,8 @@ const { billede, href, titel } = Astro.props;
         before:opacity-0 after:opacity-0
         before:transition-opacity after:transition-opacity
         group-hover:before:opacity-100
-        group-hover:after:opacity-100"
+        group-hover:after:opacity-100
+        rounded-b-xl"
     >
       {titel}
     </h3>

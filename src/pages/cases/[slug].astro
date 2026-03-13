@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/UI/header.astro";
 import Footer from "../../components/UI/footer.astro";
+import Knap from "../../components/UI/link.astro";
 import CaseGif from "../../components/work/casegif.astro";
 import Overskrift2 from "../../components/blocks/overskrift2.astro";
 import Underoverskrift from "../../components/blocks/underoverskrift.astro";
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { caseData } = Astro.props;
-const { titel, undertitel, billede, gif, text, imgdisplay, date } = caseData;
+const { titel, gif, text, imgdisplay, date, programs, url } = caseData;
 ---
 
 <Layout>
@@ -30,15 +31,20 @@ const { titel, undertitel, billede, gif, text, imgdisplay, date } = caseData;
         <Overskrift2 titel={titel} />
         <Underoverskrift>
           <h3 class="text-lg">{`> ${date}`}</h3>
-          {
-            undertitel.map((paragraph) => (
-              <h3 class="text-lg">{`> ${paragraph}`}</h3>
-            ))
-          }
+          <h3 class="text-lg">{`> ${programs.join(", ")}`}</h3>
         </Underoverskrift>
       </div>
+
       <Brodtekst>{text.map((paragraph) => <p>{paragraph}</p>)}</Brodtekst>
+      {
+        url && (
+          <div class="mx-auto max-w-7xl">
+            <Knap url={url} tekst="see project" />
+          </div>
+        )
+      }
     </div>
+
     <div class="grid gap-10">
       <div>
         <Overskrift2 titel="Fotos from the project" />

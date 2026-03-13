@@ -1,9 +1,9 @@
 ---
-const { tekst } = Astro.props;
+const { tekst, url } = Astro.props;
 ---
 
-<a href=`#${tekst}`>
-  <button class="group bg-blue p-3 rounded-full text-xl cursor-pointer">
+<a href=`${url}` target="_blank">
+  <button class="group bg-blue p-3 rounded-full text-lg cursor-pointer">
     <h3
       class="relative
               before:content-['>']

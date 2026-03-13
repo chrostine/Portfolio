@@ -1,25 +1,30 @@
 export type Case = {
   slug: string;
   titel: string;
-  undertitel: string[];
   date: string;
   billede: string;
   gif: string;
   text: string[];
   imgdisplay: string[];
+  programs: string[];
+  url: string;
 };
 
 export const casearray: Case[] = [
   {
     slug: "pixeline",
+    url: "https://p1xel1ne.netlify.app/",
     titel: "AI Mascot Generator: Pixeline",
-    undertitel: [
-      "Training Flux LoRA to recreate Pixeline in images",
-    ],
     date: "2025-11-05",
+    programs: [
+      "Astro",
+      "Tailwind",
+      "Photoshop",
+    ],
     billede: "/cases/pixeline/pixeline.png",
     gif: "/cases/pixeline/pixeline.gif",
     text: [
+      "Training Flux LoRA to recreate Pixeline in images",
       "This project has been developed as part of coursework and is solely for non-commercial use. All rights belong to the original rights holders.",
       `“[Brand] needs a new campaign website. It is important to [Brand] that [Mascot] is included in all marketing materials. The deadline is approaching, so their marketing department cannot manage to build the website, or to include [Mascot].`,
       `By using AI, we can automate and streamline the production of content, thereby opening up a more agile and free process."”`,
@@ -39,10 +44,13 @@ export const casearray: Case[] = [
   },
   {
     slug: "handicaploftet",
+    url: "",
     titel: "Data visualization of Handicapløftet",
-    undertitel: [
-    ],
     date: "2025-12-05",
+    programs: [
+      "Flourish",
+      "Umbraco",
+    ],
     billede: "/cases/handicaploftet/danmarkskort.png",
     gif: "/cases/handicaploftet/handi.gif",
     text: [
@@ -63,15 +71,16 @@ export const casearray: Case[] = [
   },
   {
     slug: "munich",
+    url: "",
     titel: "City Branding: Munich",
-    undertitel: [
-      "Dynamic visual identity",
-    ],
     date: "2026-02-06",
+    programs: [
+      "Figma"
+    ],
     billede: "/cases/munich/pattern.png",
     gif: "/cases/munich/munich.gif",
     text: [
-      "I have designed a visual identity for Munich based on the city's flag, which consists of black and yellow diamonds.",
+      "I have designed a dynamic visual identity for Munich based on the city's flag, which consists of black and yellow diamonds.",
       "The diamond is split into triangles, which serve as the identity's modular building blocks. The triangles can be combined freely and create a dynamic, changeable system."
     ],
     imgdisplay: [
@@ -86,16 +95,16 @@ export const casearray: Case[] = [
   },
   {
     slug: "pi-day",
+    url: "",
     titel: "Poster generator for Pi Day",
-    undertitel: [
-      "Interactive poster"
-    ],
     date: "2024-11-29",
+    programs: [
+      "Processing"
+    ],
     billede: "/cases/piday/piday01.png",
     gif: "/cases/piday/piday.png",
     text: [
       `The motif on the poster is inspired by pi. Selected variables in the sketch can be controlled with the mouse and keyboard, and the poster can be exported as a png by pressing 'v'.`,
-      "The sketch is made in Processing."
     ],
     imgdisplay: [
         "/cases/piday/piday_right.gif",
@@ -106,10 +115,12 @@ export const casearray: Case[] = [
   },
   {
     slug: "sakura island",
-    titel: "Blender: Sakura island",
-    undertitel: [
-    ],
+    url: "",
+    titel: "Sakura island",
     date: "2024-11-15",
+    programs: [
+      "Blender"
+    ],
     billede: "/cases/sakura/sakura.png",
     gif: "/cases/sakura/sakura.gif",
     text: [
@@ -123,14 +134,17 @@ export const casearray: Case[] = [
   },
   {
     slug: "shecanplay",
+    url: "",
     titel: "Rebrand of SheCanPlay",
-    undertitel: [
-      "Koncept: formlessness"
-    ],
     date: "2025-12-12",
+    programs: [
+      "Figma",
+      "p5.js"
+    ],
     billede: "/cases/shecanplay/shecanplay8.png",
     gif: "/cases/shecanplay/shecanblob.gif",
     text: [
+      "Koncept: formlessness.",
       `“You can remain formless. You can take a form. You can take a form now, you can take a form later. Your choice, your need.”`,
       "SheCanPlay is a Danish nonprofit organization that works to strengthen young women's and gender minorities' participation, visibility and opportunities in the music industry. The organization offers free talent development programs, community, industry insight and access to creative facilities.",
       `The organization desires a visual identity that opens up for an 'endorsed brands' structure for the artists who wish to signal their affiliation with SheCanPlay, without overpowering the emerging artist's own identity.`
@@ -151,15 +165,18 @@ export const casearray: Case[] = [
   },
   {
     slug: "aaben",
+    url: "https://aaben-perlin.netlify.app/",
     titel: "Label generator for Åben øl",
-    undertitel: [
-    ],
     date: "2026-03-06",
+    programs: [
+      "Figma",
+      "p5.js",
+      "Three.js",
+    ],
     billede: "/cases/aaben/aaben00.png",
     gif: "/cases/aaben/aaben.gif",
     text: [
       "Conceptualization, design and coded solution of a visual design system, which ÅBEN can use to create label designs for their many different beers.",
-      "Coded with p5.js and three.js."
     ],
     imgdisplay: [
       "/cases/aaben/aaben08.png",
@@ -176,10 +193,13 @@ export const casearray: Case[] = [
   },
   {
     slug: "plotter",
+    url: "https://plotte-prikker.netlify.app/",
     titel: "Plotter art generator",
-    undertitel: [
-    ],
     date: "2024-12-20",
+    programs: [
+      "p5.js",
+      "Shoelace",
+    ],
     billede: "/cases/prikker/plotte-prikker.png",
     gif: "/cases/prikker/prikker.gif",
     text: [
@@ -194,10 +214,13 @@ export const casearray: Case[] = [
   },
   {
     slug: "monsterbird",
+    url: "https://monster-bird.netlify.app/",
     titel: "Monster bird",
-    undertitel: [
-    ],
     date: "2024-12-16",
+    programs: [
+      "Processing",
+      "p5.js",
+    ],
     billede: "/cases/monster/monster3.png",
     gif: "/cases/monster/monster.gif",
     text: [
