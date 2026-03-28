@@ -253,6 +253,7 @@ export const casearray: Case[] = [
       "/cases/ikea/ikea-1.png",
       "/cases/ikea/ikea-2.png",
       "/cases/ikea/ikea-3.png",
+      "/cases/ikea/ikea-5.png",
       "/cases/ikea/ikea-4.png",
     ],
   },
