@@ -141,7 +141,7 @@ export const casearray: Case[] = [
       "Figma",
       "p5.js"
     ],
-    billede: "/cases/shecanplay/shecanplay8.png",
+    billede: "/cases/shecanplay/shecanplay9.png",
     gif: "/cases/shecanplay/shecanblob.gif",
     text: [
       "Koncept: formlessness.",
@@ -173,7 +173,7 @@ export const casearray: Case[] = [
       "p5.js",
       "Three.js",
     ],
-    billede: "/cases/aaben/aaben00.png",
+    billede: "/cases/aaben/aaben08.png",
     gif: "/cases/aaben/aaben.gif",
     text: [
       "Conceptualization, design and coded solution of a visual design system, which ÅBEN can use to create label designs for their many different beers.",
@@ -188,7 +188,6 @@ export const casearray: Case[] = [
       "/cases/aaben/aaben01.png",
       "/cases/aaben/aaben09.jpg",
       "/cases/aaben/aaben04.jpg",
-      
     ],
   },
   {
@@ -231,6 +230,30 @@ export const casearray: Case[] = [
       "/cases/monster/monster1.png",
       "/cases/monster/monster2.png",
       "/cases/monster/monster3.png",
+    ],
+  },
+    {
+    slug: "ikeamapper",
+    url: "",
+    titel: "Projection Mapping X IKEA",
+    date: "2026-03-27",
+    programs: [
+      "TouchDesigner",
+      "MadMapper",
+    ],
+    billede: "/cases/ikea/ikea-1.png",
+    gif: "/cases/ikea/ikea-1.gif",
+    text: [
+      `An interactive projection mapping project created for IKEA, exploring how everyday objects become part of people's lives over time.`,
+      "Through three rice paper lamps the installation visualizes changing life situations and relationships surrounding the same product.",
+      "By integrating authentic, user-submitted material, the project highlights emotional value, reuse, and longevity, conveying a sustainable narrative of design as something that follows us throughout life."
+    ],
+    imgdisplay: [
+      "/cases/ikea/ikea-2.gif",
+      "/cases/ikea/ikea-1.png",
+      "/cases/ikea/ikea-2.png",
+      "/cases/ikea/ikea-3.png",
+      "/cases/ikea/ikea-4.png",
     ],
   },
 ];
