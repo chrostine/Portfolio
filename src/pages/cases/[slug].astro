@@ -30,8 +30,8 @@ const { titel, gif, text, imgdisplay, date, programs, url } = caseData;
       <div>
         <Overskrift2 titel={titel} />
         <Underoverskrift>
-          <h3 class="text-lg">{`> ${date}`}</h3>
-          <h3 class="text-lg">{`> ${programs.join(", ")}`}</h3>
+          <h3>{`> ${date}`}</h3>
+          <h3>{`> ${programs.join(", ")}`}</h3>
         </Underoverskrift>
       </div>
 
@@ -43,15 +43,9 @@ const { titel, gif, text, imgdisplay, date, programs, url } = caseData;
           </div>
         )
       }
-    </div>
-
-    <div class="grid gap-10">
-      <div>
-        <Overskrift2 titel="Fotos from the project" />
-        <Underoverskrift>
-          <h3 class="text-lg">{`> Selected images of the case`}</h3>
-        </Underoverskrift>
-      </div>
+      <Underoverskrift>
+        <h3>{`> Fotos from the project`}</h3>
+      </Underoverskrift>
       <Display images={imgdisplay} />
     </div>
     <Footer />

@@ -13,7 +13,7 @@ export type Case = {
 export const casearray: Case[] = [
   {
     slug: "pixeline",
-    url: "https://p1xel1ne.netlify.app/",
+    url: "",
     titel: "AI Mascot Generator: Pixeline",
     date: "2025-11-05",
     programs: [
@@ -172,6 +172,7 @@ export const casearray: Case[] = [
       "Figma",
       "p5.js",
       "Three.js",
+      "Shoelace",
     ],
     billede: "/cases/aaben/aaben08.png",
     gif: "/cases/aaben/aaben.gif",

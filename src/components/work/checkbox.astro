@@ -1,0 +1,50 @@
+---
+import { casearray } from "../../scripts/casearray";
+
+const allPrograms = [...new Set(casearray.flatMap((c) => c.programs))].sort();
+---
+
+<div class="mx-auto max-w-xl px-5">
+
+    <div class="font-underoverskrift lowercase text-sm flex flex-wrap gap-x-5 gap-y-2" id="filter-container">
+  {allPrograms.map((program) => (
+    <label class="flex items-center gap-2 cursor-pointer select-none">
+      <input
+        type="checkbox"
+        class="sr-only peer"
+        data-program={program}
+      />
+      <span class="peer-checked:hidden ">[ ]</span>
+      <span class="hidden peer-checked:inline">[x]</span>
+      {program}
+    </label>
+  ))}
+</div>
+</div>
+
+
+<script>
+  const checkboxes = document.querySelectorAll<HTMLInputElement>('#filter-container input[type="checkbox"]');
+  const caseWrappers = document.querySelectorAll<HTMLElement>('#cases-grid [data-programs]');
+
+  function updateFilter() {
+    const checked = [...checkboxes]
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.dataset.program!.toLowerCase());
+
+    caseWrappers.forEach((wrapper) => {
+      if (checked.length === 0) {
+        wrapper.style.display = "";
+        return;
+      }
+      const programs = wrapper.dataset.programs!
+        .split(",")
+        .map((p) => p.toLowerCase());
+
+      const match = checked.some((c) => programs.includes(c));
+      wrapper.style.display = match ? "" : "none";
+    });
+  }
+
+  checkboxes.forEach((cb) => cb.addEventListener("change", updateFilter));
+</script>
