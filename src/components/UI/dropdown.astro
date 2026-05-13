@@ -1,0 +1,42 @@
+---
+// Accordion.astro
+const { titel } = Astro.props;
+---
+
+<div class="mx-auto max-w-xl w-full">
+  <div class="accordion-item">
+    <button
+      class="accordion-toggle flex text-left text-base pb-10 gap-1 cursor-pointer px-5"
+      aria-expanded="false"
+    >
+      <span class="accordion-icon font-underoverskrift">[+]</span>
+      <h3>{titel}</h3>
+    </button>
+    <div class="accordion-content hidden">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".accordion-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling as HTMLElement | null;
+      const icon = btn.querySelector(".accordion-icon");
+
+      if (!content || !icon) return;
+
+      const isOpen = !content.classList.contains("hidden");
+
+      if (!isOpen) {
+        content.classList.remove("hidden");
+        icon.textContent = "[-]";
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        content.classList.add("hidden");
+        icon.textContent = "[+]";
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script>

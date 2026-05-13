@@ -119,7 +119,8 @@ export const casearray: Case[] = [
     titel: "Sakura island",
     date: "2024-11-15",
     programs: [
-      "Blender"
+      "Blender",
+      "3D",
     ],
     billede: "/cases/sakura/sakura.png",
     gif: "/cases/sakura/sakura.gif",
@@ -173,6 +174,7 @@ export const casearray: Case[] = [
       "p5.js",
       "Three.js",
       "Shoelace",
+      "3D",
     ],
     billede: "/cases/aaben/aaben08.png",
     gif: "/cases/aaben/aaben.gif",
@@ -233,7 +235,7 @@ export const casearray: Case[] = [
       "/cases/monster/monster3.png",
     ],
   },
-    {
+  {
     slug: "ikeamapper",
     url: "",
     titel: "Projection Mapping X IKEA",
@@ -256,6 +258,31 @@ export const casearray: Case[] = [
       "/cases/ikea/ikea-3.png",
       "/cases/ikea/ikea-5.png",
       "/cases/ikea/ikea-4.png",
+    ],
+  },
+  {
+    slug: "vikinggame",
+    url: "",
+    titel: "Game Jam: Dont't drink and bike",
+    date: "2026-04-30",
+    programs: [
+      "Unity",
+      "C#",
+    ],
+    billede: "/cases/viking/viking-2.png",
+    gif: "/cases/viking/viking.gif",
+    text: [
+      "A simple yet engaging game created for Rådet for Sikker Trafik, designed to raise awareness among young people about the consequences of cycling under the influence.",
+      "The game uses a surreal, adventure-like journey as a metaphor for intoxication, illustrating how being caught up in the moment can distort perception and disconnect players from reality.",
+      "The game was created in four days as a part of a group project.",
+    ],
+    imgdisplay: [
+      "/cases/viking/viking-1.png",
+      "/cases/viking/viking-2.png",
+      "/cases/viking/viking-3.png",
+      "/cases/viking/viking-4.png",
+      "/cases/viking/viking-5.png",
+      "/cases/viking/viking-6.png",
     ],
   },
 ];
