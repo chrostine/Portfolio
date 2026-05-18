@@ -19,20 +19,18 @@ import Sketch from "../components/sketch.astro";
 
 <Layout>
   <div class="grid gap-25">
-    <Sketch tekst="Christine's portfolio" />
-    <div class="mx-auto max-w-7xl grid text-center gap-5">
-      <Underoverskrift>
-        <h3>Welcome to</h3>
-      </Underoverskrift>
-      <div class="pb-15">
+    <div>
+      <Sketch tekst="Christine's portfolio">
         <Streng />
-      </div>
-      <div class="flex justify-center gap-1 sm:gap-5">
-        <Knap tekst="about" />
-        <Knap tekst="work" />
-        <Knap tekst="contact" />
-      </div>
+      </Sketch>
     </div>
+
+    <div class="flex justify-center gap-1 sm:gap-5">
+      <Knap tekst="about" />
+      <Knap tekst="work" />
+      <Knap tekst="contact" />
+    </div>
+
     <Img src="/assets/christine.png" />
     <div class="grid gap-10">
       <div id="about">
@@ -61,6 +59,17 @@ import Sketch from "../components/sketch.astro";
         <p>
           I am always open to new projects and collaborations — especially those
           that challenge conventional ways of using technology.
+        </p>
+      </Brodtekst>
+      <div class="py-10">
+        <Figur />
+      </div>
+      <Brodtekst>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
         </p>
       </Brodtekst>
       <Dropdown titel="Education">
@@ -92,21 +101,19 @@ import Sketch from "../components/sketch.astro";
           </BrodtekstNoGap>
         </div>
       </Dropdown>
-      <div class="py-10">
-        <Figur />
-      </div>
     </div>
 
     <div id="work" class="grid gap-10">
       <div>
         <Overskrift1 titel="work" />
         <Underoverskrift>
-          <h3>{`> `}Work, cases and personal projects</h3>
+          <h3>{`> `}Filter through work, cases and personal projects</h3>
         </Underoverskrift>
       </div>
       <Checkbox />
       <ShowWork />
     </div>
+
     <div id="contact">
       <Footer />
     </div>

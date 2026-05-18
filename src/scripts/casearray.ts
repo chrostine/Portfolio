@@ -46,7 +46,7 @@ export const casearray: Case[] = [
   {
     slug: "handicaploftet",
     url: "https://www.lev.dk/handicaploftet/valgte-underskrivere-i-kommuner-og-region/",
-    titel: "Data visualization of Handicapløftet",
+    titel: `Data visualization of "Handicapløftet"`,
     date: "2025-12-05",
     programs: [
       "Flourish",
@@ -168,7 +168,7 @@ export const casearray: Case[] = [
   {
     slug: "aaben",
     url: "https://aaben-perlin.netlify.app/",
-    titel: "Label generator for Åben øl",
+    titel: `Label generator for "Åben øl"`,
     date: "2026-03-06",
     programs: [
       "Figma",
@@ -314,14 +314,14 @@ export const casearray: Case[] = [
   {
     slug: "havskaer",
     url: "https://havskaer.netlify.app/",
-    titel: "Exam: Havskaer",
+    titel: `Exam: "Havskær"`,
     date: "2025-01-21",
     programs: [
       "Illustrator",
       "p5.js",
     ],
     billede: "/cases/havskaer/havskaer-1.png",
-    gif: "/cases/havskaer/havskaer.png",
+    gif: "/cases/havskaer/havskaer.gif",
     text: [
       "Havskær is a conceptual jewelry brand and webshop universe inspired by the ocean, created with a focus on sustainability and storytelling.",
       "The project combines a trend-based mermaidcore aesthetic with the purpose of raising awareness about ocean conservation through jewelry design.",
@@ -339,6 +339,29 @@ export const casearray: Case[] = [
       "/cases/havskaer/havskaer-7.png",
       "/cases/havskaer/havskaer-8.png",
       "/cases/havskaer/havskaer-9.png",
+    ],
+  },
+  {
+    slug: "bundtrawl",
+    url: "",
+    titel: `Exam: "Havet under pres"`,
+    date: "2025-06-13",
+    programs: [
+      "Illustrator",
+      "p5.js",
+      "Figma",
+    ],
+    billede: "/cases/bundtrawl/bundtrawl-7.png",
+    gif: "/cases/bundtrawl/bundtrawl.gif",
+    text: [
+    ],
+    imgdisplay: [
+      "/cases/bundtrawl/bundtrawl-2.png",
+      "/cases/bundtrawl/bundtrawl-3.png",
+      "/cases/bundtrawl/bundtrawl-4.png",
+      "/cases/bundtrawl/bundtrawl-5.png",
+      "/cases/bundtrawl/bundtrawl-1.png",
+      "/cases/bundtrawl/bundtrawl-6.png",
     ],
   },
 ];

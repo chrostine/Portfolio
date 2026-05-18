@@ -1,5 +1,4 @@
 ---
-// Accordion.astro
 const { titel } = Astro.props;
 ---
 
@@ -12,31 +11,238 @@ const { titel } = Astro.props;
       <span class="accordion-icon font-underoverskrift">[+]</span>
       <h3>{titel}</h3>
     </button>
-    <div class="accordion-content hidden">
-      <slot />
+    <div class="accordion-content">
+      <div class="typewriter-wrapper">
+        <slot />
+      </div>
     </div>
   </div>
 </div>
 
+<style>
+  .accordion-content {
+    display: none;
+  }
+
+  .accordion-content.is-open {
+    display: block;
+  }
+
+  .typewriter-wrapper {
+    overflow: hidden;
+  }
+
+  .typewriter-active::after {
+    content: "|";
+    display: inline;
+    animation: blink 0.7s step-end infinite;
+  }
+
+  .typewriter-done::after {
+    content: none;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<!-- styrer animation og open/close -->
 <script>
   document.querySelectorAll(".accordion-toggle").forEach((btn) => {
+    let animationTimeout: ReturnType<typeof setTimeout> | null = null;
+    let originalTexts: { node: Text; text: string }[] | null = null;
+
     btn.addEventListener("click", () => {
       const content = btn.nextElementSibling as HTMLElement | null;
       const icon = btn.querySelector(".accordion-icon");
 
       if (!content || !icon) return;
 
-      const isOpen = !content.classList.contains("hidden");
+      const isOpen = content.classList.contains("is-open");
+      const wrapper = content.querySelector(
+        ".typewriter-wrapper",
+      ) as HTMLElement | null;
+
+      // stop
+      if (animationTimeout !== null) {
+        clearTimeout(animationTimeout);
+        animationTimeout = null;
+      }
+
+      wrapper
+        ?.querySelectorAll(".typewriter-active, .typewriter-done")
+        .forEach((el) => {
+          el.classList.remove("typewriter-active", "typewriter-done");
+        });
 
       if (!isOpen) {
-        content.classList.remove("hidden");
+        // open
+        if (originalTexts) {
+          originalTexts.forEach(({ node, text }) => (node.textContent = text));
+        }
+
+        content.classList.add("is-open");
         icon.textContent = "[-]";
         btn.setAttribute("aria-expanded", "true");
+
+        if (wrapper) {
+          originalTexts = typewriterReveal(
+            wrapper,
+            "forward",
+            (id) => {
+              animationTimeout = id;
+            },
+            () => {
+              animationTimeout = null;
+            },
+          );
+        }
       } else {
-        content.classList.add("hidden");
+        // close
         icon.textContent = "[+]";
         btn.setAttribute("aria-expanded", "false");
+
+        if (wrapper && originalTexts) {
+          typewriterReveal(
+            wrapper,
+            "backward",
+            (id) => {
+              animationTimeout = id;
+            },
+            () => {
+              animationTimeout = null;
+              originalTexts!.forEach(
+                ({ node, text }) => (node.textContent = text),
+              );
+              content.classList.remove("is-open");
+            },
+          );
+        } else {
+          content.classList.remove("is-open");
+        }
       }
     });
   });
+
+  function typewriterReveal(
+    wrapper: HTMLElement,
+    direction: "forward" | "backward",
+    onTick: (id: ReturnType<typeof setTimeout>) => void,
+    onDone: () => void,
+  ): { node: Text; text: string }[] {
+    const textNodes = getTextNodes(wrapper);
+
+    const originals: { node: Text; text: string }[] = textNodes.map((node) => ({
+      node,
+      text: node.textContent ?? "",
+    }));
+
+    const speed = 5; // styrer hastighed !!!!!! tweak
+
+    if (direction === "forward") {
+      originals.forEach(({ node }) => (node.textContent = ""));
+
+      let nodeIndex = 0;
+      // opdel i ord
+      let words: string[] = [];
+      let wordIndex = 0;
+
+      const firstEl = originals[0]?.node.parentElement;
+      if (firstEl) firstEl.classList.add("typewriter-active");
+
+      function loadWords() {
+        words = splitWords(originals[nodeIndex].text);
+        wordIndex = 0;
+      }
+      loadWords();
+
+      function typeForward() {
+        if (nodeIndex >= originals.length) {
+          wrapper.querySelectorAll(".typewriter-active").forEach((el) => {
+            el.classList.remove("typewriter-active");
+            el.classList.add("typewriter-done");
+          });
+          onDone();
+          return;
+        }
+
+        if (wordIndex < words.length) {
+          originals[nodeIndex].node.textContent += words[wordIndex];
+          wordIndex++;
+        } else {
+          nodeIndex++;
+          if (nodeIndex < originals.length) loadWords();
+        }
+
+        const id = setTimeout(typeForward, speed);
+        onTick(id);
+      }
+
+      typeForward();
+    } else {
+      let nodeIndex = originals.length - 1;
+
+      originals.forEach(({ node, text }) => (node.textContent = text));
+
+      // baglæns
+      let words: string[] = splitWords(originals[nodeIndex]?.text ?? "");
+      let wordIndex = words.length;
+
+      const lastEl = originals[nodeIndex]?.node.parentElement;
+      if (lastEl) lastEl.classList.add("typewriter-active");
+
+      function typeBackward() {
+        if (nodeIndex < 0) {
+          wrapper.querySelectorAll(".typewriter-active").forEach((el) => {
+            el.classList.remove("typewriter-active");
+          });
+          onDone();
+          return;
+        }
+
+        if (wordIndex > 0) {
+          wordIndex--;
+          originals[nodeIndex].node.textContent = words
+            .slice(0, wordIndex)
+            .join("");
+        } else {
+          const prevEl = originals[nodeIndex].node.parentElement;
+          prevEl?.classList.remove("typewriter-active");
+
+          nodeIndex--;
+          if (nodeIndex >= 0) {
+            words = splitWords(originals[nodeIndex].text);
+            wordIndex = words.length;
+            const nextEl = originals[nodeIndex].node.parentElement;
+            nextEl?.classList.add("typewriter-active");
+          }
+        }
+        const id = setTimeout(typeBackward, speed / 2);
+        onTick(id);
+      }
+      typeBackward();
+    }
+    return originals;
+  }
+
+  function splitWords(text: string): string[] {
+    return text.match(/\S+\s*/g) ?? [];
+  }
+
+  function getTextNodes(el: Node): Text[] {
+    const result: Text[] = [];
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.textContent?.trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      },
+    });
+    let node: Node | null;
+    while ((node = walker.nextNode())) result.push(node as Text);
+    return result;
+  }
 </script>

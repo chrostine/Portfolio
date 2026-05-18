@@ -1,12 +1,26 @@
 ---
 const { tekst } = Astro.props;
+
+import Underoverskrift from "./blocks/underoverskrift.astro";
 ---
 
-<div id="sketch" data-tekst={tekst}></div>
+<div class="relative">
+  <div id="sketch" data-tekst={tekst}></div>
+  <div
+    class="absolute inset-0 flex flex-col gap-5 text-center text-green pt-50"
+  >
+    <div class="text-blue">
+      <Underoverskrift>
+        <h3>Welcome to</h3>
+      </Underoverskrift>
+    </div>
+    <slot />
+  </div>
+</div>
 
 <style>
   #sketch canvas {
-    pointer-events: none; /* ← Dette er løsningen */
+    pointer-events: none;
   }
 </style>
 
@@ -20,6 +34,7 @@ const { tekst } = Astro.props;
   const root = getComputedStyle(document.documentElement);
   const darkblue = root.getPropertyValue("--color-darkblue").trim();
   const green = root.getPropertyValue("--color-green").trim();
+  const blue = root.getPropertyValue("--color-blue").trim();
   const hvid = root.getPropertyValue("--color-hvid").trim();
   const fontTitel = root.getPropertyValue("--font-titel").trim();
   const fontBrodtekst = root.getPropertyValue("--font-brodtekst").trim();
@@ -52,18 +67,21 @@ const { tekst } = Astro.props;
       p.fill(green);
       p.noStroke();
       p.textFont(fontUnderoverskrift);
-      p.textSize(20);
+      p.textSize(16);
 
       // navigationspil
       p.push();
       p.translate(getWidth() / 2, getHeight() * 0.88);
+      p.fill(blue);
+      p.text("scroll", -5, -80);
       p.rotate(p.HALF_PI);
       p.textSize(60);
+      p.text("_", -30, -21);
       p.text(">", 0, 0);
       p.pop();
 
       const letters = (tekst + " > ").split("");
-      const letterSpacing = 17;
+      const letterSpacing = 15;
       const speed = 0.2;
 
       offset += speed;
