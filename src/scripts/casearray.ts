@@ -341,27 +341,4 @@ export const casearray: Case[] = [
       "/cases/havskaer/havskaer-9.png",
     ],
   },
-  {
-    slug: "bundtrawl",
-    url: "",
-    titel: `Exam: "Havet under pres"`,
-    date: "2025-06-13",
-    programs: [
-      "Illustrator",
-      "p5.js",
-      "Figma",
-    ],
-    billede: "/cases/bundtrawl/bundtrawl-7.png",
-    gif: "/cases/bundtrawl/bundtrawl.gif",
-    text: [
-    ],
-    imgdisplay: [
-      "/cases/bundtrawl/bundtrawl-2.png",
-      "/cases/bundtrawl/bundtrawl-3.png",
-      "/cases/bundtrawl/bundtrawl-4.png",
-      "/cases/bundtrawl/bundtrawl-5.png",
-      "/cases/bundtrawl/bundtrawl-1.png",
-      "/cases/bundtrawl/bundtrawl-6.png",
-    ],
-  },
 ];
