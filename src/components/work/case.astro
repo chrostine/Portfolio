@@ -1,5 +1,9 @@
 ---
 const { billede, href, titel, programmer } = Astro.props;
+
+const ord = titel.split(" ");
+const sidsteOrd = ord.pop();
+const restenAfTitel = ord.join(" ");
 ---
 
 <a href={href} class="group block h-[400px] w-[300px] shrink-0">
@@ -9,16 +13,22 @@ const { billede, href, titel, programmer } = Astro.props;
   >
     <h3
       class="relative text-center
-        bg-darkgrey text-blue text-s pr-5 pl-5 pt-2 pb-2
+        bg-darkgrey text-blue text-sm px-5 py-2
         before:content-['>']
-        after:content-['<']
-        before:opacity-0 after:opacity-0
-        before:transition-opacity after:transition-opacity
+        before:opacity-0
+        before:transition-opacity
         group-hover:before:opacity-100
-        group-hover:after:opacity-100
         rounded-b-xl"
     >
-      {titel}
+      {restenAfTitel}{" "}
+      <span
+        class="inline-flex whitespace-nowrap
+        after:content-['<'] after:pl-2
+        after:opacity-0 after:transition-opacity
+        group-hover:after:opacity-100"
+      >
+        {sidsteOrd}
+      </span>
     </h3>
   </div>
 </a>

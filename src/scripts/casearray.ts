@@ -91,7 +91,6 @@ export const casearray: Case[] = [
         "/cases/munich/munich04.png",
         "/cases/munich/munich05.png",
         "/cases/munich/munich06.png",
-        "/cases/munich/munich07.png",
     ],
   },
   {
@@ -152,17 +151,12 @@ export const casearray: Case[] = [
       `The organization desires a visual identity that opens up for an 'endorsed brands' structure for the artists who wish to signal their affiliation with SheCanPlay, without overpowering the emerging artist's own identity.`
     ],
     imgdisplay: [
-      "/cases/shecanplay/shecanplay1.png",
-      "/cases/shecanplay/shecanplay2.png",
       "/cases/shecanplay/shecanplay3.png",
       "/cases/shecanplay/shecanplay4.png",
       "/cases/shecanplay/shecanplay5.png",
-      "/cases/shecanplay/shecanplay6.png",
-      "/cases/shecanplay/shecanplay7.png",
-      "/cases/shecanplay/shecanplay8.png",
       "/cases/shecanplay/shecanplay9.png",
+      "/cases/shecanplay/shecanplay7.png",
       "/cases/shecanplay/shecanplay10.png",
-      "/cases/shecanplay/shecanplay11.png",
     ],
   },
   {
@@ -185,14 +179,8 @@ export const casearray: Case[] = [
     ],
     imgdisplay: [
       "/cases/aaben/aaben08.png",
-      "/cases/aaben/aaben07.png",
       "/cases/aaben/aaben06.png",
-      "/cases/aaben/aaben02.png",
-      "/cases/aaben/aaben03.png",
       "/cases/aaben/aaben05.png",
-      "/cases/aaben/aaben01.png",
-      "/cases/aaben/aaben09.jpg",
-      "/cases/aaben/aaben04.jpg",
     ],
   },
   {
@@ -256,10 +244,7 @@ export const casearray: Case[] = [
     imgdisplay: [
       "/cases/ikea/ikea-2.gif",
       "/cases/ikea/ikea-1.png",
-      "/cases/ikea/ikea-2.png",
-      "/cases/ikea/ikea-3.png",
       "/cases/ikea/ikea-5.png",
-      "/cases/ikea/ikea-4.png",
     ],
   },
   {
@@ -279,10 +264,7 @@ export const casearray: Case[] = [
       "The game was created in four days as a part of a group project.",
     ],
     imgdisplay: [
-      "/cases/viking/viking-1.png",
       "/cases/viking/viking-2.png",
-      "/cases/viking/viking-3.png",
-      "/cases/viking/viking-4.png",
       "/cases/viking/viking-5.png",
       "/cases/viking/viking-6.png",
     ],
@@ -333,10 +315,7 @@ export const casearray: Case[] = [
       "/cases/havskaer/havskaer-1.png",
       "/cases/havskaer/havskaer-2.png",
       "/cases/havskaer/havskaer-3.png",
-      "/cases/havskaer/havskaer-4.png",
-      "/cases/havskaer/havskaer-5.png",
       "/cases/havskaer/havskaer-6.png",
-      "/cases/havskaer/havskaer-7.png",
       "/cases/havskaer/havskaer-8.png",
       "/cases/havskaer/havskaer-9.png",
     ],
