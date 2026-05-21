@@ -48,6 +48,8 @@ import Underoverskrift from "./blocks/underoverskrift.astro";
   const frequency = 0.04;
   const amplitude = 70;
 
+  let canWrite = false;
+
   // SKETCH START
 
   const sketch = (p: any) => {
@@ -69,11 +71,17 @@ import Underoverskrift from "./blocks/underoverskrift.astro";
       p.textFont(fontUnderoverskrift);
       p.textSize(16);
 
+      // cursor
+      p.push();
+      p.fill(blue);
+      p.noCursor();
+      p.text(canWrite ? "write" : "scroll", p.mouseX, p.mouseY - 30);
+      p.pop();
+
       // navigationspil
       p.push();
       p.translate(getWidth() / 2, getHeight() * 0.88);
       p.fill(blue);
-      p.text("scroll", -5, -80);
       p.rotate(p.HALF_PI);
       p.textSize(60);
       p.text("_", -30, -21);
@@ -123,9 +131,14 @@ import Underoverskrift from "./blocks/underoverskrift.astro";
 
   new p5(sketch, document.getElementById("sketch") ?? undefined);
 
-  // Lyt på ændringer fra streng.astro
+  // streng.astro
   document.addEventListener("strengChanged", (e: Event) => {
     tekst = (e as CustomEvent).detail.toLowerCase();
     sessionStorage.setItem("strengTekst", tekst);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    canWrite = el?.tagName === "INPUT" || el?.tagName === "TEXTAREA";
   });
 </script>

@@ -8,6 +8,7 @@ export type Case = {
   imgdisplay: string[];
   programs: string[];
   url: string;
+  hover: string;
 };
 
 export const casearray: Case[] = [
@@ -42,6 +43,7 @@ export const casearray: Case[] = [
       "/cases/pixeline/pixeline08.png",
       "/cases/pixeline/pixeline09.png",
     ],
+    hover: "This project explores how AI can be used to recreate and integrate the character Pixeline into digital campaigns. By automating the production of images, text, and graphic elements, the project demonstrates how AI can create a more efficient and flexible design process for campaign and web production.",
   },
   {
     slug: "handicaploftet",
@@ -69,6 +71,7 @@ export const casearray: Case[] = [
         "/cases/handicaploftet/handi_01.png",
         "/cases/handicaploftet/handi_02.png",
     ],
+    hover: `This project visualizes data on selected signatories across municipalities and regions in connection with the 2025 local elections, focusing on the "Handicapløftet" initiative.`,
   },
   {
     slug: "munich",
@@ -92,6 +95,7 @@ export const casearray: Case[] = [
         "/cases/munich/munich05.png",
         "/cases/munich/munich06.png",
     ],
+    hover: "This project presents a dynamic visual identity for Munich inspired by the city's iconic flag with black and yellow diamonds. By dividing the diamond shape into modular triangles, a flexible and adaptable design system is created that can be used across different media and platforms.",
   },
   {
     slug: "pi-day",
@@ -110,8 +114,8 @@ export const casearray: Case[] = [
         "/cases/piday/piday_right.gif",
         "/cases/piday/piday_rotate.gif",
         "/cases/piday/piday_zoom.gif",
-
     ],
+    hover: "This project features a poster design inspired by π. The interactive sketch allows users to adjust selected variables using mouse and keyboard controls.",
   },
   {
     slug: "sakura island",
@@ -132,6 +136,7 @@ export const casearray: Case[] = [
       "/cases/sakura/sakura2.gif",
       "/cases/sakura/sakura3.gif",
     ],
+    hover: "Visualization of my own island in a 3D environment based on shape, color and composition.",
   },
   {
     slug: "shecanplay",
@@ -158,6 +163,7 @@ export const casearray: Case[] = [
       "/cases/shecanplay/shecanplay7.png",
       "/cases/shecanplay/shecanplay10.png",
     ],
+    hover: "This project explores the concept of formlessness as a flexible visual and conceptual framework for SheCanPlay.",
   },
   {
     slug: "aaben",
@@ -182,6 +188,7 @@ export const casearray: Case[] = [
       "/cases/aaben/aaben06.png",
       "/cases/aaben/aaben05.png",
     ],
+    hover: "Conceptualization, design and coded solution of a visual design system, which ÅBEN can use to create label designs for their many different beers.",
   },
   {
     slug: "plotter",
@@ -203,6 +210,7 @@ export const casearray: Case[] = [
       "/cases/prikker/prikker2.png",
       "/cases/prikker/prikker3.png",
     ],
+    hover: "This project presents a browser-based sketch built in p5.js that enables generative design output.",
   },
   {
     slug: "monsterbird",
@@ -224,6 +232,7 @@ export const casearray: Case[] = [
       "/cases/monster/monster2.png",
       "/cases/monster/monster3.png",
     ],
+    hover: "My own version of the game Flappy Bird in a universe of neon, monsters and acid.",
   },
   {
     slug: "ikeamapper",
@@ -246,6 +255,7 @@ export const casearray: Case[] = [
       "/cases/ikea/ikea-1.png",
       "/cases/ikea/ikea-5.png",
     ],
+    hover: "This interactive projection mapping project for IKEA explores how everyday objects become part of people's lives over time. Using three rice paper lamps, the installation visualizes changing life situations and relationships centered around the same product.",
   },
   {
     slug: "vikinggame",
@@ -268,6 +278,7 @@ export const casearray: Case[] = [
       "/cases/viking/viking-5.png",
       "/cases/viking/viking-6.png",
     ],
+    hover: `A game developed for "Rådet for Sikker Trafik" to raise awareness among young people about the risks of cycling under the influence.`,
   },
   {
     slug: "lev",
@@ -281,7 +292,7 @@ export const casearray: Case[] = [
     billede: "/cases/lev/lev-2.png",
     gif: "/cases/lev/lev-1.png",
     text: [
-      "I was part of the development of Lev’s new digital universe, with a focus on content migration and the continued development of the website experience.",
+      "I was part of the development of Lev's new digital universe, with a focus on content migration and the continued development of the website experience.",
       "The project provided valuable experience in both content structuring and collaboration within a digital development process.",
     ],
     imgdisplay: [
@@ -292,6 +303,7 @@ export const casearray: Case[] = [
       "/cases/lev/lev-6.png",
       "/cases/lev/lev-7.png",
     ],
+    hover: "This project involves the development of Lev's new digital universe, with a focus on content migration and the ongoing refinement of the website experience.",
   },
   {
     slug: "havskaer",
@@ -319,5 +331,6 @@ export const casearray: Case[] = [
       "/cases/havskaer/havskaer-8.png",
       "/cases/havskaer/havskaer-9.png",
     ],
+    hover: `This project presents "Havskær", a conceptual jewelry brand and webshop universe inspired by the ocean, with a strong focus on sustainability and storytelling. The project includes a full visual identity and an interactive certification generator.`,
   },
 ];

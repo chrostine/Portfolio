@@ -1,16 +1,41 @@
 ---
-const { billede, href, titel, programmer } = Astro.props;
+const { billede, href, titel, programs, hover } = Astro.props;
 
 const ord = titel.split(" ");
 const sidsteOrd = ord.pop();
 const restenAfTitel = ord.join(" ");
 ---
 
-<a href={href} class="group block h-[400px] w-[300px] shrink-0">
+<a
+  href={href}
+  class="group block h-[400px] w-[300px] shrink-0"
+  data-programs={programs.join(",")}
+>
   <div
-    class="h-full rounded-xl bg-center bg-no-repeat bg-cover grid items-end"
+    class="relative h-full rounded-xl bg-center bg-no-repeat bg-cover grid grid-rows-[auto_1fr_auto] items-end"
     style={`background-image: url(${billede})`}
   >
+    <!-- overlay -->
+    <div
+      class="absolute inset-0 bg-darkgrey duration-400 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
+    >
+    </div>
+
+    <!-- programs øverst -->
+    <h3
+      class="relative text-center text-sm text-blue pt-3 px-3 duration-400 opacity-0 group-hover:opacity-100 transition-opacity"
+    >
+      {programs.join(", ")}
+    </h3>
+
+    <!-- hover tekst i midten-->
+    <p
+      class="relative text-sm text-blue self-center duration-400 opacity-0 group-hover:opacity-100 transition-opacity px-5"
+    >
+      {hover}
+    </p>
+
+    <!-- titel i bunden -->
     <h3
       class="relative text-center
         bg-darkgrey text-blue text-sm px-5 py-2
@@ -20,7 +45,7 @@ const restenAfTitel = ord.join(" ");
         group-hover:before:opacity-100
         rounded-b-xl"
     >
-      {restenAfTitel}{" "}
+      {restenAfTitel}
       <span
         class="inline-flex whitespace-nowrap
         after:content-['<'] after:pl-2
